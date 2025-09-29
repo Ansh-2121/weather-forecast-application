@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whether forecast app </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>.rainy { background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%); }</style>
+</head>
+
+<body class="m-0 p-0 box-border h-screen">
+    <main id="main-container" class="flex flex-col md:flex-row items-center">
+        <div class="left-container w-full md:w-[30%] h-[50vh] md:h-screen p-[10px_5px] bg-[rgb(13,108,108)] text-white">
+            <div class="search-container relative flex items-center m-[20px_15px] md:m-[80px_15px]">
+                <input id="input-contanier" type="text" placeholder="Enter City Name" class="bg-white capitalize p-4 rounded-md text-sm w-full outline-none border-none">
+
+                <select name="" id="converter" class="converter absolute right-[45px] border-none outline-none text-[18px] cursor-pointer text-black">
+                    <option>
+                        °C</option>
+                    <option>
+                        °F</option>
+                </select>
+                <i class="fa-solid fa-location-crosshairs absolute right-[75px] text-black cursor-pointer text-[22px]" onclick="getCurrentLocation()"></i>
+            </div>
+            <div id="error-msg" class="text-red-500 mt-2 ml-5"></div>
+            <div id="alert" class="hidden bg-red-500 text-white p-2 rounded mt-2 ml-5">Extreme temperature alert!</div>
+            <select id="recent" class="mt-2 ml-5 bg-white p-2 rounded text-black"><option value="">Select recent city</option></select>
+            <div class="whther-icon"></div>
+            <h2 class="tempreture ml-5 text-7xl"></h2>
+            <div class="feel-likes ml-5 text-3xl"></div>
+            <div class="discrption ml-5 text-3xl"></div>
+            <hr>
+            <div class="date ml-5 text-3xl"></div>
+            <div class="city ml-5 text-3xl"></div>
+
+
+
+        </div>
+        <div class="right-container w-full md:w-[70%] h-[50vh] md:h-screen p-4 md:p-8 overflow-auto">
+            <h2 class="heading text-2xl">Today's Highlight</h2>
+            <div class="highlight grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="humidity h-[200px] grid place-items-center text-center bg-[rgb(13,108,108)] rounded-[20px] p-4">
+                    humidity
+                    <i class="fa-solid fa-droplet text-[45px]"></i>
+                    <h1 id="hvalue"></h1>
+                </div>
+                <div class="wind-speed h-[200px] grid place-items-center text-center bg-[rgb(13,108,108)] rounded-[20px] p-4">
+                    Wind Speed
+                    <i class="fa-solid fa-wind text-[45px]"></i>
+                    <h1 id="wvalue"></h1>
+                </div>
+                <div class="sun h-[200px] grid place-items-center text-center bg-[rgb(13,108,108)] rounded-[20px] p-4">
+                    <span class="flex items-center gap-[10px]">
+                        <i class="fa-solid fa-sun text-[45px]"></i>
+                        <p><span id="srvalue"></span> Sunrise</p>
+                    </span>
+                    <span class="flex items-center gap-[10px]">
+                        <i class="fa-regular fa-sun text-[45px]"></i>
+                        <p><span id="ssvalue"></span> Sunset</p>
+                    </span>
+                </div>
+                <div class="clouds h-[200px] grid place-items-center text-center bg-[rgb(13,108,108)] rounded-[20px] p-4">
+                    Clouds
+                    <i class="fa-solid fa-cloud text-[45px]"></i>
+                    <h1 id="cvalue"></h1>
+                </div>
+                <div class="uvindex h-[200px] grid place-items-center text-center bg-[rgb(13,108,108)] rounded-[20px] p-4">
+                    UV Index
+                    <i class="fa-solid fa-bacon text-[45px]"></i>
+                    <h1 id="uvvalue"></h1>
+                </div>
+                <div class="pressure h-[200px] grid place-items-center text-center bg-[rgb(13,108,108)] rounded-[20px] p-4">
+                    Pressure
+                    <i class="fa-solid fa-gauge-simple text-[45px]"></i>
+                    <h1 id="pvalue"></h1>
+                </div>
+
+            </div>
+            <br>
+            <h2 class="heading text-2xl">This Week</h2>
+            <div class="forecast grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 mt-5"></div>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

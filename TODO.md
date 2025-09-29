@@ -1,0 +1,6 @@
+- [x] Update index.html: Add Tailwind CDN script and remove style.css link
+- [x] Update body and main-container with Tailwind classes
+- [x] Update left-container and its children with Tailwind classes
+- [x] Update right-container and its children with Tailwind classes
+- [x] Remove or empty style.css
+- [x] Test the app by opening index.html in browser
