@@ -3,4 +3,12 @@
 - [x] Update left-container and its children with Tailwind classes
 - [x] Update right-container and its children with Tailwind classes
 - [x] Remove or empty style.css
+- [x] Add responsive design for iPad Mini and iPhone SE
+- [x] Add dropdown for recently searched cities
+- [x] Make temperature toggle functional only on today's temperature
+- [x] Add custom weather alerts for extreme temperatures
+- [x] Add dynamic rainy background
+- [x] Add icons for temp, wind, humidity in forecast cards
+- [x] Replace JS alerts with custom error messages
+- [x] Set up Git repository and commit changes
 - [x] Test the app by opening index.html in browser
